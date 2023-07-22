@@ -1,0 +1,19 @@
+# workflow名
+name: Shell commands
+
+# Git pushした時にワークフローを実行する
+on: [push]
+
+jobs:
+  # ジョブ名（任意の名）
+  run-shell-command:
+    # virtual machineの形式
+    runs-on: ubuntu-latest
+    # ジョブのステップ
+    steps:
+      - name: echo a string
+        run: echo "Hello world"
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
